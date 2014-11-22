@@ -16,7 +16,6 @@ public class Server_ImplSOAP extends Server_ImplBase {
 		super();
 	}
 	
-	@Override
 	public List<Product> getCurrentOffer() {
 		return getOffer();
 	}
