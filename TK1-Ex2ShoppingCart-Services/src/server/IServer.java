@@ -20,4 +20,7 @@ public interface IServer {
 	
 	/** Provide information about all the products */ 
 	public List<Product> getCurrentOffer();
+	
+	/** removes p of the current offer */
+	public boolean buyProduct(Product p);
 }

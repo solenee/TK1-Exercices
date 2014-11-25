@@ -27,5 +27,10 @@ public abstract class  Server_ImplBase implements IServer {
 		offer.add(p);
 	}
 	
+	public boolean buyProduct(Product p){
+		// TODO gerer la synchronisation et le cas ou il y en a plus
+		this.offer.remove(p);
+		return true;
+	}
 
 }
