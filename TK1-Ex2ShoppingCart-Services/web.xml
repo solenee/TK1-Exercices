@@ -1,0 +1,39 @@
+
+<?xml version ="1.0" encoding="UTF−8"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://tk.informatik.tu-darmstadt.de" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tk.informatik.tu-darmstadt.de"
+	name="IServer">
+	<types>
+		<xsd : schema>
+			<xsd : import namespace="http :// tk . informatik . tu−darmstadt . de"
+				schemaLocation="http :// tk . informatik . tu−darmstadt . de/ LocationService . xsd">
+			</xsd : import>
+			<xsd:complexType name="Product">
+				<xsd : sequence>
+					<xsd:element name="x" type="xsd:int" />
+					<xsd:element name="y" type="xsd:int" />
+				</xsd : sequence>
+		</xsd : complexType>
+	</xsd : schema>
+	</types>
+	<message name="getLocation">
+		<part name="arg0" type="xsd : int"></part>
+	</message>
+	<message name="getLocationResponse">
+		<part name="return" element="tns : Location"></part>
+	</message>
+	<portType name="LocationService">
+		<operation name="getLocation">
+			<input message="tns : getLocation"></input>
+			<output message="tns : getLocationResponse"></output>
+		</operation>
+	</portType>
+	<service name="LocationService">
+		<port name="LocationPort" binding="tns : LocationServicePortBindng">
+			1
+			<soap : address location="http :// tk . informatik . tu−darmstadt . de">
+			</soap : address>
+		</port>
+	</service>
+</definitions>
